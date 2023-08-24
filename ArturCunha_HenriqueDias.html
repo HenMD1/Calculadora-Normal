@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        body {
+            background:rgb(69, 153, 222);
+            color: white;
+            font: normal 18pt Arial;
+                }
+        input {
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+        select {
+            font: normal 18pt Arial;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <input type="number" name="txtn1" id="txtn1">
+    <input type="number" name="txtn2" id="txtn2">
+    <select id = "selectOperation" name = "selectOperation" style = "height: 30; width: 30;">
+        <option value = "somar">Somar</option>
+        <option value = "subtrair">Subtrair</option>
+        <option value = "multiplicar">Multiplicar</option>
+        <option value = "dividir">Dividir</option>
+        <option value = "exponenciar">Exponenciar</option>
+        <option value = "radiciar">Radiciar</option>
+    </select>
+    <input type="button" value="Ahmir" onclick="operation()">
+    <div id="res">Resultado</div>
+    <script>
+        function operation(){
+            var tn1 = document.getElementById('txtn1')
+            var tn2 = document.getElementById('txtn2')
+            var res = document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var sel = document.getElementById('selectOperation')
+            if (sel.value == 'somar'){
+                res.innerHTML = n1+n2
+            }
+            if (sel.value == 'subtrair'){
+                res.innerHTML = n1-n2
+            }
+            if (sel.value == 'multiplicar'){
+                res.innerHTML = n1*n2
+            }
+            if (sel.value == 'dividir'){
+                res.innerHTML = n1/n2
+            }
+            if (sel.value == 'exponenciar'){
+                res.innerHTML = n1**n2
+            }
+            if (sel.value == 'radiciar'){
+                res.innerHTML = n1**(1/n2)
+            }
+        }
+        
+    </script>
+</body>
+</html>
